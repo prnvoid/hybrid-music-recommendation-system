@@ -36,3 +36,43 @@ This project explores how content-based methods can improve discovery for these 
 independent/underground artists, purpose-built for studying the long tail of music.
 
 Subset used: `fma_small` (8,000 tracks, 8 genres)
+
+## Setup
+
+```bash
+git clone https://github.com/YOUR_USERNAME/music-recommender.git
+cd music-recommender
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+## Download the data
+
+```bash
+# Metadata (342 MB)
+wget https://os.unil.cloud.switch.ch/fma/fma_metadata.zip
+unzip fma_metadata.zip -d data/
+
+# Small audio subset (7.2 GB) — optional for Phase 1
+wget https://os.unil.cloud.switch.ch/fma/fma_small.zip
+unzip fma_small.zip -d data/
+```
+
+## Results
+
+| Method | Coverage | Precision@10 |
+|---|---|---|
+| Audio embedding (all songs) | 100% | 0.42 |
+| Word2Vec (songs with history) | 63% | 0.61 |
+| SVD collaborative filtering | 38% | 0.68 |
+
+*Fill in your actual numbers once Phase 3 is complete*
+
+## Status
+
+- [x] Phase 1 — Data pipeline (FMA)
+- [ ] Phase 2 — Audio embeddings + cosine similarity  
+- [ ] Phase 3 — Collaborative filtering
+- [ ] Phase 4 — FastAPI endpoint
+- [ ] Phase 5 — FAISS vector search
