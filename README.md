@@ -72,7 +72,7 @@ unzip fma_small.zip -d data/
 ## Status
 
 - [x] Phase 1 — Data pipeline (FMA)
-- [ ] Phase 2 — Audio embeddings + cosine similarity  
-- [ ] Phase 3 — Collaborative filtering
+- [x] Phase 2 — Audio embeddings + cosine similarity  
+- [x] Phase 3 — Collaborative filtering
 - [ ] Phase 4 — FastAPI endpoint
 - [ ] Phase 5 — FAISS vector search
