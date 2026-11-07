@@ -5,7 +5,7 @@ __pycache__/
 .env
 venv/
 env/
-
+Data/
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
@@ -28,3 +28,35 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Dataset files
+data/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Intermediate data and model artifacts
+*.pkl
+*.pickle
+*.npy
+*.index
+*.bin
+
+# Audio files
+*.mp3
+*.wav
+*.flac
+
+# Generated directories
+.dist/
+.ipynb_checkpoints/
+
+# Credentials
+.env
+.env.*
+!.env.example
