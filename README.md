@@ -167,4 +167,146 @@ The current pipeline reports the following distribution of retained singular-val
 | Retained factors | Reported variance/energy |
 |---|---:|
 | Top 10 | 25.1% |
-| Top 20 | 45.4%
+| Top 20 | 45.4% |
+| All 50 | 100% |
+
+These figures describe the retained SVD representation and should not be interpreted as variance explained across the full, untruncated interaction matrix.
+
+### Example Recommendation Output
+
+For simulated user `user_0000`:
+
+| Measurement | Result |
+|---|---:|
+| Previously listened tracks | 48 |
+| New recommendations generated | 10 |
+| User representation | 50 dimensions |
+
+The collaborative filtering pipeline generates ranked recommendations using predicted user-track scores.
+
+### Preliminary Recommendation Evaluation
+
+Current top-10 evaluation output across 500 simulated users:
+
+| Metric | Score |
+|---|---:|
+| Precision@10 | 0.1118 |
+| Recall@10 | 0.1898 |
+| F1@10 | 0.1407 |
+
+These results are preliminary pipeline outputs. The evaluation methodology, including train-test separation, candidate construction and baseline comparisons, is being reviewed before drawing conclusions about recommendation quality.
+
+The current results should not be interpreted as validated real-world recommendation performance.
+
+---
+
+## Complete Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Programming Languages | Python, SQL |
+| Data Processing | Pandas, NumPy |
+| Audio Analysis | Librosa |
+| Machine Learning | Scikit-learn, PyTorch |
+| Recommendation Algorithms | Content-Based Filtering, Collaborative Filtering, SVD |
+| Embeddings | Audio Feature Representations, Word2Vec |
+| Vector Search | FAISS |
+| Similarity | Cosine Similarity, Inner Product |
+| API Development | FastAPI (planned integration) |
+| Development Environment | Jupyter Notebook |
+| Version Control | Git, GitHub |
+
+---
+
+## Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/prnvoid/hybrid-music-recommendation-system.git
+
+cd hybrid-music-recommendation-system
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate the environment:
+
+```bash
+# Windows
+venv\Scripts\activate
+
+# Linux / macOS
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Download the Dataset
+
+### FMA Metadata
+
+```bash
+wget https://os.unil.cloud.switch.ch/fma/fma_metadata.zip
+
+unzip fma_metadata.zip -d data/
+```
+
+### FMA Small Audio Subset
+
+```bash
+wget https://os.unil.cloud.switch.ch/fma/fma_small.zip
+
+unzip fma_small.zip -d data/
+```
+
+The audio subset requires approximately 7.2 GB of storage.
+
+Dataset documentation: https://github.com/mdeff/fma
+
+---
+
+## Development Roadmap
+
+- [x] Phase 1 — FMA dataset loading, preprocessing and exploratory analysis.
+- [x] Phase 2 — Audio feature extraction and content-based similarity.
+- [x] Phase 3 — Simulated user interactions and SVD-based collaborative filtering.
+- [x] Phase 4 — Audio and unified FAISS index generation and exact vector retrieval.
+- [ ] Phase 5 — Hybrid recommendation scoring and model refinement.
+- [ ] Phase 6 — Evaluation against popularity and individual-model baselines.
+- [ ] Phase 7 — Cold-start and long-tail recommendation experiments.
+- [ ] Phase 8 — Explore vs Familiar recommendation mechanism.
+- [ ] Phase 9 — FastAPI integration and deployment.
+
+---
+
+## Future Research Directions
+
+The next stage focuses on evaluating the system beyond conventional recommendation accuracy.
+
+Planned experiments include:
+
+- **Model comparison:** Comparing content-based, collaborative and hybrid recommendation approaches.
+- **Implicit-feedback modelling:** Exploring Alternating Least Squares (ALS) and Bayesian Personalized Ranking (BPR).
+- **Recommendation diversity:** Measuring catalogue coverage, novelty and intra-list diversity.
+- **Long-tail discovery:** Evaluating exposure and recall for less-popular tracks.
+- **Serendipitous recommendation:** Investigating the relationship between relevance and unexpectedness.
+- **Preference modelling:** Studying how user preferences and exploration behaviour influence recommendation outcomes.
+- **Human-centered evaluation:** Exploring real-user feedback and perceived recommendation usefulness.
+
+The broader objective is to investigate recommendation systems that do more than reproduce existing listening patterns: systems that can also facilitate meaningful discovery.
+
+---
+
+**Project Status:** Active Development | Master's Thesis | 2026–Present
+
+**Author:** Pranav R Kumar
+
