@@ -280,10 +280,10 @@ Dataset documentation: https://github.com/mdeff/fma
 - [x] Phase 2 — Audio feature extraction and content-based similarity.
 - [x] Phase 3 — Simulated user interactions and SVD-based collaborative filtering.
 - [x] Phase 4 — Audio and unified FAISS index generation and exact vector retrieval.
-- [ ] Phase 5 — Hybrid recommendation scoring and model refinement.
+- [x] Phase 5 — Hybrid recommendation scoring and model refinement.
 - [ ] Phase 6 — Evaluation against popularity and individual-model baselines.
 - [ ] Phase 7 — Cold-start and long-tail recommendation experiments.
-- [ ] Phase 8 — Explore vs Familiar recommendation mechanism.
+- [x] Phase 8 — Explore vs Familiar recommendation mechanism.
 - [ ] Phase 9 — FastAPI integration and deployment.
 
 ---
